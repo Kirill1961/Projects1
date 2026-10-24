@@ -1,0 +1,9 @@
+
+ version: 2
+
+# Даём имя источнику и таблице
+ sources:
+  - name: shop  # Имя источника
+    tables:
+      - name: raw_orders  #  Имя таблицы
+
