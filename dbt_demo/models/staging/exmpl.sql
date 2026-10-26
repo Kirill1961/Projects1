@@ -1,9 +1,10 @@
 {{ config(materialized='table') }}
 
 select
+    price,
     quantity,
-    store,
-    price
+    store
+
 from {{ source("shop", "raw_orders") }}
 
 
