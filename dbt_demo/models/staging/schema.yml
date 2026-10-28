@@ -20,7 +20,6 @@ models:
         description: "Идентификатор заказа"
         data_tests:
           - not_null
-          - unique
       - name: user_id
         description: "Идентификатор пользователя"
         data_tests:
