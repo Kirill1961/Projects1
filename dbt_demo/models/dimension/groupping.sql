@@ -1,2 +1,2 @@
 select *
-from {{ ref("exmpl") }}
+from {{ ref("stg_sales") }}
