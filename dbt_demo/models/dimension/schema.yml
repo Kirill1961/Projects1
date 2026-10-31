@@ -9,4 +9,10 @@ models:
         data_tests:
           - not_null
 
-
+  - name: dim_product
+    description: "Наименования продукции"
+    columns:
+      - name: product
+        description: "Бытовые приборы"
+        data_tests:
+          - not_null
