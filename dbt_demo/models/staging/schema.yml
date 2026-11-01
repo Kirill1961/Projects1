@@ -38,6 +38,7 @@ models:
         description: "Цена за единицу"
         data_tests:
           - not_null
+          - unique
       - name: quantity
         description: "Количество в заказе"
         data_tests:
