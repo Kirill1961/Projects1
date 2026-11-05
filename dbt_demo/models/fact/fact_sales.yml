@@ -1,0 +1,34 @@
+
+models:
+  - name: fact_sales
+    description: "data preparation"
+    columns:
+      - name: order_id
+        description: "Идентификатор заказа"
+        data_tests:
+          - not_null
+      - name: user_id
+        description: "Идентификатор пользователя"
+        data_tests:
+          - not_null
+      - name: date
+        description: "Дата операции "
+        data_tests:
+          - not_null
+      - name: product
+        description: "Товар в заказе"
+        data_tests:
+          - not_null
+      - name: price
+        description: "Цена за единицу"
+        data_tests:
+          - not_null
+          - unique
+      - name: quantity
+        description: "Количество в заказе"
+        data_tests:
+          - not_null
+      - name: store
+        description: "Магазин в заказе"
+        data_tests:
+          - not_null
