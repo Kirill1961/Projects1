@@ -8,6 +8,17 @@
 3 Все этапы модели должны быть в одном select
 
 */
+with columns_cast as(
+    select
+        cast(order_id as integer) as order_id,
+        cast(user_id as integer) as user_id,
+        cast(date as date) as date,
+        cast(price as decimal(10,2)) as price,
+        cast(quantity as integer) as quantity,
+        cast(product as varchar) as product,
+        cast(store as varchar) as store
+    from {{ source("shop", "raw_orders") }}
+    )
 select
     order_id,
     user_id,
@@ -15,15 +26,8 @@ select
     price,
     quantity,
     store,
-    date,
-    cast(order_id as integer),
-    cast(user_id as integer),
-    cast(date as date),
-    cast(price as decimal(10,2)),
-    cast(quantity as integer),
-    cast(product as varchar),
-    cast(store as varchar)
-from {{ source("shop", "raw_orders") }}
+    date
+from columns_cast
 where order_id is not null
 	and user_id is not null
 	and product is not null
