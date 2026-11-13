@@ -1,6 +1,7 @@
 select
     product,
-    price
+    price,
+    quantity
 from {{ ref("stg_sales") }}
-group by product, price
+group by product, price, quantity
 
