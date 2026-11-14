@@ -8,8 +8,8 @@ select
     product,
     price,
     quantity,
-    store,
-   (price * quantity) as revenue
+    store
+{#   (price * quantity) as revenue#}
 {#sum(price * quantity) over(partition by store order by store desc) as wind#}
 from {{ ref("stg_sales") }}
 {#group by strftime(date,'%Y-%m'), store#}

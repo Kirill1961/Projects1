@@ -21,3 +21,18 @@ models:
         data_tests:
           - not_null
           - unique
+      - name: order_id
+        description: "id заказа"
+        data_tests:
+          - not_null
+          - unique
+      - name: user_id
+        description: "id клиента"
+        data_tests:
+          - not_null
+          - unique
+      - name: quantity
+        description: "количество в заказе"
+        data_tests:
+          - not_null
+          - unique
